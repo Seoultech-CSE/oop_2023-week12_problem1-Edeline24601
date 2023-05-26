@@ -1,29 +1,35 @@
-import java.util.*;
+    import java.util.*;
 
-public class week13_1 {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+    public class Problem1 {
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            ArrayList<Number> list = new ArrayList<>();
+            System.out.print("Enter five integers and five doubles: ");
+            for(int i = 0; i < 5; i++){
+                int n = input.nextInt();
+                list.add(n);
+            }
+            for(int i = 0; i < 5; i++){
+                double n = input.nextDouble();
+                list.add(n);
+            }
+            
+            sort(list);
 
-        // 필요한 자료형을 넣어주세요
-        ArrayList< __________ > list = new ArrayList< __________ >();
-        System.out.print("Enter five integers and five doubles: ");
+            for (int i = 0; i < list.size(); i++){
+                System.out.print(list.get(i) + " ");
+            }
+        }
 
-        /*
-            list 입력 코드
-         */
-
-        sort(list);
-
-        /*
-            list 출력 코드
-         */
+        public static void sort(ArrayList<Number> arr) {
+            for (int i = 0; i < arr.size() - 1; i++) {
+                for (int j = 0; j < arr.size() - i - 1; j++) {
+                    if (arr.get(j).doubleValue() > arr.get(j+1).doubleValue()) {
+                        Number temp = arr.get(j);
+                        arr.set(j, arr.get(j + 1));
+                        arr.set(j + 1, temp);
+                    }
+                }
+            }
+        }
     }
-
-    public static void sort( __________ ) {
-
-         /*
-            list 정렬 코드
-         */
-
-    }
-}
